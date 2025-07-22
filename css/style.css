@@ -288,6 +288,10 @@ nav ul li a:hover::after {
   background: #ff004f;
 }
 
+button.btn {
+  background-color: transparent;
+}
+
 /* contact */
 .contact-left {
   flex-basis: 35%;
@@ -326,8 +330,32 @@ nav ul li a:hover::after {
 }
 
 .btn.btn2 {
-  display: inline-block;
-  background: #ff004f;
+  position: relative; /* Essential for positioning the pseudo-element */
+  overflow: hidden; /* Hides the overflowing part of the pseudo-element initially */
+  z-index: 1; /* Ensures the button text is above the pseudo-element */
+  background-color: transparent; /* Start with a transparent background for the fill to show */
+  transition: color 0.4s ease-in-out; /* Smooth transition for text color */
+}
+
+.btn.btn2::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ff004f; /* The color of the fill */
+  z-index: -1; /* Places the fill behind the button's text */
+  transform: scaleX(0); /* Start with zero width */
+  transform-origin: left; /* Animate from the left */
+  transition: transform 0.6s cubic-bezier(0.5, 1.5, 0.5, 1); /* Smooth and bouncy transition */
+}
+.btn.btn2:hover::before {
+  transform: scaleX(1); /* Expand to full width on hover */
+}
+
+.btn.btn2:hover {
+  color: #fff; /* Change text color on hover */
 }
 
 .contact-right form {
