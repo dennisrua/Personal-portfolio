@@ -79,6 +79,23 @@ nav ul li a:hover::after {
   color: #ff004f;
 }
 
+.header-btns {
+  position: relative;
+  margin-top: 20px;
+  z-index: 2;
+  float: left;
+  display: inline-flex;
+  gap: 40px;
+  transition: 0.3s ease, transform 0.3s ease;
+}
+
+.header.social-icons {
+  position: absolute;
+  z-index: 1;
+  left: 205px;
+  padding: 150px;
+}
+
 /* About */
 #about {
   padding: 80px 0;
@@ -202,8 +219,8 @@ nav ul li a:hover::after {
   transform: translateY(-10px);
 }
 
-/* Portfolio */
-#portfolio {
+/* projects */
+#projects {
   padding: 50px 0;
 }
 
@@ -356,6 +373,25 @@ button.btn {
 
 .btn.btn2:hover {
   color: #fff; /* Change text color on hover */
+}
+.btn.btn3 {
+  background-color: #ff004f;
+  border-radius: 30px;
+  transition: 0.3s ease, transform 0.3s ease;
+}
+
+.btn.btn4 {
+  background-color: transparent;
+  border: 1px solid #ff004f;
+  border-radius: 30px;
+  border-width: 2px;
+  color: #fff;
+  transition: 0.3s ease, transform 0.3s ease;
+}
+
+.btn.btn3:hover,
+.btn.btn4:hover {
+  transform: translateY(-10px);
 }
 
 .contact-right form {
